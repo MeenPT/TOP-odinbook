@@ -19,14 +19,12 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <div>
-      <%= render "layouts/navbar" %>
+    <%= render "layouts/navbar" %>
+    <%= render "layouts/sidebar" %>
+    <div class="p-4 sm:ml-64">
+      <main class="p-4 mt-14">
+        <%= yield %>
+      </main>
     </div>
-    <div class="hidden lg:block">
-      <%= render  "layouts/sidebar" %>
-    </div>
-    <main class="container mx-auto px-5">
-      <%= yield %>
-    </main>
   </body>
 </html>
