@@ -27,4 +27,7 @@ class User < ApplicationRecord
 
   # Validations rules
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
+
+  # Associations
+  has_many :posts, dependent: :destroy
 end
