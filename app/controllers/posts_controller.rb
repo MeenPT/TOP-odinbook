@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  layout "dashboard"
   before_action :authenticate_user!
   before_action :set_post, only: %i[ show edit update destroy ]
 
