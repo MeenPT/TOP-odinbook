@@ -1,0 +1,9 @@
+<li>
+  <%= link_to item[:path], 
+      {
+        class: "flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group #{"bg-gray-100" if current_page?(item[:path])}"
+      } do %>
+    <%= image_tag item[:icon], { class: "size-4"} %>
+    <span class="ms-3"><%= item[:label] %></span>
+  <% end %>
+</li>
