@@ -1,1 +1,5 @@
-<%= button_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, data: { turbo: false } %>
+<%= button_to user_google_oauth2_omniauth_authorize_path, 
+           { class: "btn--subtle w-full flex items-center justify-center", data: { turbo: false } } do%>
+  <%= image_tag "icons/google.svg", class: "size-4 mr-2" %>
+  <span>Sign in with Google</span>
+<% end %>

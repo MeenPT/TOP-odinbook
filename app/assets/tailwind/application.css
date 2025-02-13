@@ -1,1 +1,47 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary-50: #fafde8;
+  --color-primary-100: #f2f9ce;
+  --color-primary-200: #e4f4a2;
+  --color-primary-300: #cfea6c;
+  --color-primary-400: #b9dc3f;
+  --color-primary-500: #9bc220;
+  --color-primary-600: #83a917;
+  --color-primary-700: #5b7615;
+  --color-primary-800: #495e16;
+  --color-primary-900: #3f5017;
+  --color-primary-950: #202c07;
+}
+
+root,
+html,
+body {
+  @apply h-full bg-neutral-100;
+}
+
+.form {
+  .form__field {
+    @apply flex flex-col space-y-2;
+  }
+
+  .form__label {
+    @apply text-neutral-500 text-sm font-medium;
+  }
+
+  .form__text-field {
+    @apply bg-neutral-100 px-5 py-2.5 rounded-lg text-neutral-700 w-full outline-1 outline-solid outline-neutral-200 focus:outline-primary-500;
+  }
+
+  .form__check-box {
+    @apply size-4 bg-neutral-100 border-neutral-200 rounded-lg;
+  }
+}
+
+.btn--subtle {
+  @apply border border-neutral-200  text-neutral-600 rounded-lg px-5 py-2.5 font-medium hover:bg-black/5 hover:text-black transition-all cursor-pointer;
+}
+
+.btn--primary {
+  @apply bg-primary-500 border-primary-600 text-primary-950 rounded-lg px-5 py-2.5 font-medium hover:bg-primary-400 hover:text-black transition-all cursor-pointer;
+}

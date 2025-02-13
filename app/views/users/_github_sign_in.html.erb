@@ -1,1 +1,6 @@
-<%= button_to "Sign in with Github", user_github_omniauth_authorize_path, data: { turbo: false } %>
+<%= button_to user_github_omniauth_authorize_path, 
+    { class: "btn--subtle w-full flex items-center justify-center", 
+    data: { turbo: false }} do %>
+  <%= image_tag "icons/github.svg", class: "size-4 mr-2" %>
+  <span>Sign in with Github</span>
+<% end %>
