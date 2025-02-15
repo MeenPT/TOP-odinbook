@@ -18,4 +18,9 @@ class User < ApplicationRecord
   end
 
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
+
+  def avatar_url
+    return image if image.present?
+    "https://avatar.iran.liara.run/username?username=#{name}"
+  end
 end
