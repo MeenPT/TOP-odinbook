@@ -1,0 +1,23 @@
+<nav class="flex items-center">
+  <div>
+    <button class="aspect-square border border-neutral-200 p-2.5 rounded-lg cursor-pointer hover:bg-black/10 md:hidden transition">
+      <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      <span class="sr-only">open sidebar</span>
+    </button>
+  </div>
+  <div class="ml-auto flex items-center gap-4">
+    <figure class="flex items-center border border-neutral-200 pr-3 rounded-full">
+      <%= image_tag current_user.avatar_url, alt: "#{current_user.name} avatar", class: "avatar" %>
+      <figcaption class="ml-2 text-sm text-neutral-600">
+        <%= current_user.name %>
+      </figcaption>
+    </figure>
+    <%= button_to destroy_user_session_path, 
+                  method: :delete, 
+                  class: "aspect-square border border-neutral-200 p-2.5 rounded-lg cursor-pointer hover:bg-black/10 transition", 
+                  title: "Sign out" do %>
+      <svg class="size-4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+      <span class="sr-only">sign out</span>
+    <% end %>
+  </div>
+</nav>
