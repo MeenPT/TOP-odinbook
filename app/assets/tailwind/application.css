@@ -26,11 +26,11 @@ body {
   }
 
   .form__label {
-    @apply text-neutral-500 text-sm font-medium;
+    @apply text-sm font-medium text-neutral-500;
   }
 
   .form__field-error {
-    @apply text-red-500 text-xs mt-1 font-light;
+    @apply mt-1 text-xs font-light text-red-500;
   }
 
   .form__text-field {
@@ -38,7 +38,7 @@ body {
   }
 
   .form__check-box {
-    @apply size-4 bg-neutral-100 border-neutral-200 rounded-lg;
+    @apply rounded-lg size-4 bg-neutral-100 border-neutral-200;
   }
 }
 
@@ -51,5 +51,12 @@ body {
 }
 
 .avatar {
-  @apply size-10 rounded-full;
+  @apply rounded-full size-10;
+}
+
+.sidebar-item {
+  @apply flex items-center px-3 py-2 transition rounded-lg cursor-pointer text-neutral-600 hover:bg-neutral-50 hover:text-neutral-700;
+}
+.sidebar-item--active {
+  @apply flex items-center px-3 py-2 transition rounded-lg cursor-pointer text-primary-600 bg-primary-50;
 }

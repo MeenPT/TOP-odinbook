@@ -5,4 +5,14 @@ module ApplicationHelper
     errors = object.errors.full_messages_for(attribute).join(", ")
     content_tag(:div, errors, class: "form__field-error", role: "alert", aria: { live: "assertive" })
   end
+
+  def sidebar_items
+    [
+      {
+        label: "Home",
+        icon: "house",
+        path: root_path
+      }
+    ]
+  end
 end

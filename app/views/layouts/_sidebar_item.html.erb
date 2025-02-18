@@ -1,0 +1,4 @@
+<%= link_to path, class: current_page?(path) ? "sidebar-item--active" : "sidebar-item" do %>
+  <%= icon icon, class: "size-6 mr-5" %>
+  <span class="text-lg"><%= label %></span>
+<% end %>
