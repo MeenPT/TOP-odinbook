@@ -70,3 +70,5 @@ gem "omniauth-github"
 gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection"
 gem "dotenv", groups: [ :development, :test ]
+
+gem "rails_icons", "~> 1.1"
