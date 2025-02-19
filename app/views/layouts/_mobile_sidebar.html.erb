@@ -1,0 +1,17 @@
+<div class="relative z-50">
+  <div 
+    data-mobile-sidebar-target="overlay"
+    data-action="click->mobile-sidebar#close"
+    class="fixed inset-0 bg-black/50 hidden transition-opacity"></div>
+  <div 
+    data-mobile-sidebar-target="drawer"
+    class="fixed top-0 left-0 bg-white p-6 h-full w-1/2 shadow-lg border-r border-r-neutral-100 -translate-x-full transition-transform">
+    <button 
+      data-action="mobile-sidebar#close"
+      class="absolute top-4 right-4 cursor-pointer p-1 aspect-square rounded hover:bg-neutral-100 transition">
+      <%= icon "x", class: "size-4" %>
+      <span class="sr-only">close</span>
+    </button>
+    <%= render "layouts/sidebar" %>
+  </div>
+</div>

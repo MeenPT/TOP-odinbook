@@ -18,7 +18,9 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <div class="flex h-screen">
+    <div 
+      data-controller="mobile-sidebar"
+      class="flex h-screen">
       <div class="hidden md:block w-[300px] py-4 px-6 bg-white border-r border-neutral-200">
         <%= render "layouts/sidebar" %>
       </div>
@@ -31,6 +33,7 @@
           <div class="h-[1000px]"></div>
         </main>
       </div>
+      <%= render "layouts/mobile_sidebar" %>
     </div>
   </body>
 </html>
