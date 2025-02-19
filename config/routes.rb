@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  root "pages#home"
+  get "/", to: redirect("/posts")
+  resources :posts
+
   get "up" => "rails/health#show", as: :rails_health_check
 end

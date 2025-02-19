@@ -1,0 +1,38 @@
+<div class="mb-8">
+  <%= render "back_to_posts" %>
+</div>
+<section class="bg-white p-6 rounded-lg shadow">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold">New post</h1>
+  </div>
+  <%= form_with model: @post, class: "form", data: { controller: "post-form"}  do |f| %>
+    <div class="space-y-6">
+      <div class="form__field">
+        <div class="flex items-center">
+          <%= f.label :title, { class: "form__label" }%>
+          <p 
+            data-post-form-target="titleCounter"
+            class="ml-auto text-xs font-light text-neutral-400">0 / 280</p>
+        </div>
+        <%= f.text_field :title, 
+          { autofocus: true, 
+            class: "form__text-field",
+            data: {
+              "post-form-target" => "titleInput",
+              "action" => "post-form#updateTitleCounter"
+            }
+          }%>
+        <%= field_error @post, :title %>
+      </div>
+      <div class="form__field">
+        <%= f.label :content, class: "form__label" %>
+        <%= f.textarea :content, { placeholder: "(Optional)", class: "form__text-field min-h-[100px]"} %>
+        <%= field_error @post, :content %>
+      </div>
+    </div>
+    <div class="mt-8 justify-end flex items-center gap-x-3">
+      <%= link_to "Cancel", posts_path, class: "btn--subtle" %>
+      <%= f.submit  class: "btn--primary" %>
+    </div>
+  <% end %>
+</section>

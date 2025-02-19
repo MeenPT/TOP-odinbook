@@ -11,7 +11,12 @@ module ApplicationHelper
       {
         label: "Home",
         icon: "house",
-        path: root_path
+        path: posts_path
+      },
+      {
+        label: "New post",
+        icon: "circle-plus",
+        path: new_post_path
       }
     ]
   end
