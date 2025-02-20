@@ -1,11 +1,6 @@
-<h1>Post index</h1>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <div>
-        <p><%= post.title %></p>
-        <p><%= post.content %></p>
-      </div>
-    </li>
-  <% end %>
-</ul>
+<div class="mb-8">
+  <h1 class="text-3xl font-medium">All posts</h1>
+</div>
+<section class="space-y-4 md:space-y-6">
+  <%= render @posts %>
+</section>
