@@ -29,6 +29,8 @@
           <%= render "layouts/navbar" %>
         </div>
         <main class="flex-1 p-4 overflow-auto sm:p-6 md:p-8">
+          <%= render "layouts/alerts" if alert.present? %>
+          <%= render "layouts/notice" if notice.present? %>
           <%= yield %>
         </main>
       </div>
