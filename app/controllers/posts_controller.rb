@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: %i[ show destroy ]
+  before_action :set_post, only: %i[ show destroy edit update]
 
   def index
     @posts = Post.all.includes(:author).order(created_at: :desc)
@@ -20,6 +20,24 @@ class PostsController < ApplicationController
       redirect_to @post, notice: "Post created successfully!"
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    if @post.author != current_user
+      redirect_to posts_path, alert: "You are not allowed to edit this post."
+    end
+  end
+
+  def update
+    if @post.author != current_user
+      redirect_to posts_path, alert: "You are not allowed to update this post."
+    end
+
+    if @post.update(post_params)
+      redirect_to @post, notice: "Post updated successfully."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

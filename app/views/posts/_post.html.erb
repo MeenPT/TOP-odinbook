@@ -12,13 +12,19 @@
         </div>
       </div>
       <% if post.author == current_user %>
-        <div class="ml-auto flex items-center">
+        <div class="ml-auto flex items-center space-x-3">
           <%= button_to post, 
                       method: :delete, 
                       class: "aspect-square p-1.5 rounded-lg bg-neutral-50 text-neutral-500 cursor-pointer hover:bg-neutral-100 transition",
                       data: { turbo_confirm: "Are you sure to delete this post?" } do %>
             <%= icon "trash", class: "size-4" %>
             <span class="sr-only">delete</span>
+          <% end %>
+          <%= link_to edit_post_path(post), 
+                      class: "aspect-square p-1.5 rounded-lg bg-neutral-50 text-neutral-500 cursor-pointer hover:bg-neutral-100 transition",
+                      data: { "turbo_frame": "_top" } do  %>
+            <span class="sr-only">edit</span>
+            <%= icon "pencil", class: "size-4" %>
           <% end %>
         </div>
       <% end %>
