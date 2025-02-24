@@ -1,6 +1,8 @@
 <div class="mb-8">
   <h1 class="text-3xl font-medium">All posts</h1>
 </div>
-<section class="space-y-4 md:space-y-6">
-  <%= render @posts %>
+<section>
+  <%= turbo_frame_tag "posts", class: "space-y-4 md:space-y-6" do %>
+    <%= render @posts %>
+  <% end %>
 </section>
