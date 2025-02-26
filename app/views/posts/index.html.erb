@@ -3,6 +3,11 @@
 </div>
 <section>
   <%= turbo_frame_tag "posts", class: "space-y-4 md:space-y-6" do %>
-    <%= render @posts %>
+    <% @posts.each do |post| %>
+      <%= render "post",
+        post: post,
+        liked: @user_likes.include?(post.id),
+        likes_count: post.likes_count %>
+    <% end %>
   <% end %>
 </section>

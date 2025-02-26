@@ -20,6 +20,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
 
   has_many :posts, class_name: "Post", foreign_key: "author_id"
+  has_many :likes, dependent: :destroy
 
   def avatar_url
     return image if image.present?

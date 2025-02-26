@@ -3,7 +3,13 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show destroy edit update]
 
   def index
-    @posts = Post.all.includes(:author).order(created_at: :desc)
+    @posts = Post
+      # .includes(:likes)
+      .left_joins(:likes)
+      .select("posts.*, COUNT(likes.id) AS likes_count")
+      .group("posts.id")
+
+    @user_likes = current_user.likes.pluck(:post_id).to_set
   end
 
   def show

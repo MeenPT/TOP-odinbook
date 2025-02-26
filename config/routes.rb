@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   }
 
   get "/", to: redirect("/posts")
-  resources :posts
+  resources :posts do
+    resources :likes, only: [ :create, :destroy ]
+  end
 
   get "up" => "rails/health#show", as: :rails_health_check
 end
